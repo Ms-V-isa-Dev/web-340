@@ -10,7 +10,7 @@
 */
 
 // Formatted header
-var header = require('../Washington-header.js');
+var header = require('./Washington-header.js');
 
 // start program
 
@@ -28,3 +28,5 @@ http.createServer(app).listen(8080, function()
 {
   console.log("Application started on port %s", 8080);
 });
+
+// end program

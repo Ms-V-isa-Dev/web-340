@@ -1,0 +1,39 @@
+/*
+============================================
+; Title:  site.css
+; Author: Verlee Washington
+; Date:   01 March 2020
+; Description: Styling for ejs-views assignment
+;===========================================
+*/
+
+nav {
+  border: 2ox solid blueviolet;
+  padding: 5px;
+  padding-left: 490px;
+  color: black;
+}
+
+li {
+  float: left;
+  background-color: blueviolet;
+  text-align: left;
+  padding: 5px;
+  color: white;
+}
+header {
+	border: 2px solid blue;
+	height: 80px;
+}
+
+.container {
+	border: 2px solid black;
+	margin-top: 20px;
+	height: 520px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
