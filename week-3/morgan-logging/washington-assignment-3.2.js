@@ -27,12 +27,12 @@ app.use(logger("dev"));
 
 app.get("/", function(request, response) {
   response.render("index", {
-    message:"I got the Morgan Logger Example to work, whoo hoo!!"
+    message:"I got the Morgan Logger Example and Bootstrap to work, woo hoo!!"
   });
 });
 
 // Create the http server and listen on a port
-http.createServer(app).listen(5000, function() {
-  console.log("Application started on port %s", 5000);
+http.createServer(app).listen(3000, function() {
+  console.log("Application started on port %s", 3000);
 });
 
