@@ -38,31 +38,4 @@ http.createServer(app).listen(8080, function()
   console.log("EJS-Views app started on port 8080.");
 });
 
-<nav class = "navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class = "navbar-nav">
-    <li class = "nav-item active">
-    <a href="#">Home</a>
-    </li>
 
-    <li class = "nav-item">
-
-    </li>
-
-    <li class = "nav-item">
-      <a href="#">Contact Us</a>
-    </li>
-  </ul>
-</nav>
-
-<div role="main" class="container">
-  <br/><br/>
-  <h2>EJS Views Example</h2>
-
-  <div class="row">
-  <div class="col-12"></div>
-    <div class="alert alert-success" role="alert">
-      <strong>Message:</strong>
-      <span><%= message %></span>
-    </div>
-  </div>
-</div>
