@@ -10,10 +10,10 @@
 */
 
 // Start program
-var express = require('express');
-var logger = require ("morgan");
-var path = require('path');
-var http = require('http');
+var express=require('express');
+var logger=require ("morgan");
+var path=require('path');
+var http=require('http');
 
 // Register app
 var app = express();
