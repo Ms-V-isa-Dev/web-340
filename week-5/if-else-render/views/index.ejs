@@ -1,0 +1,53 @@
+<!--
+============================================
+; Title: Assignment 5.2
+; Author: professor krasso
+; Date: 03/20/2020
+; Modified by: Verlee Washington
+; Description: Creating views with EJS Templates
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <Title>Exercise 5.2 If-Else-Render</Title>
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href=#>Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href=#>About</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href=#>Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+<div role="main" class="container">
+  <br /><br />
+
+  <h2>Princess List</h2>
+
+  <!-- Single if statement that tests the length of the names array -->
+  <% if(names.length > 0) { %>
+    <% for (var j = 0; j < names.length; j++) { %>
+      <div class="alert alert-success"><strong><%= names[j] %></strong></div>
+    <% } %>
+ <% } %>
+
+</div>
+
+</body>
+</html>
