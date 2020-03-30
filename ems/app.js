@@ -1,4 +1,13 @@
-
+/*
+============================================
+; Title:  ems app
+; Author: Verlee Washington
+; Date:   29 March 2020
+; Modified by:
+; Description: Putting it all together with
+; the ems application.
+;===========================================
+*/
 var express=require("express");
 var http=require("http");
 var path=require("path");
@@ -13,8 +22,21 @@ app.use(logger("short"));
 
 app.get("/", function(request, response){
   response.render("index",{
-    title: "Home page"
-  });
+    message: "Home page",
+    title:"Home page"
+  })
+});
+
+app.get("/about", function(request, response){
+  response.render("index",{
+    message: "About page"
+  })
+});
+
+app.get("/contact", function(request, response){
+  response.render("index",{
+    message: "Contact us"
+  })
 });
 
 http.createServer(app).listen(8080, function(){

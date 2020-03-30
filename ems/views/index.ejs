@@ -1,0 +1,83 @@
+<!--
+============================================
+; Title: washington-assignment-ems
+; Author: Verlee Washington
+; Date:   29 March 2020
+; Modified by:
+; Description: Creating an employee app with
+; a database and secure login.
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%include header%>
+</head>
+
+<body>
+  <%include navbar%>
+  <h5>Employee Management System (ems)</h5>
+<div role="main" class="container">
+  <br /><br />
+
+<h2>Welcome to your employee management system home page!</h2>
+
+<div class="container" style="height: 375px;">
+  <div class="row" style="background-color: steelblue; margin-top: 30px;">
+
+    <div class="col-xs-5 col-md-5" style="text-align: center;">
+      Returning users log in here!
+      <div class="form-group" style="text-align: left;">
+        <label for="txtUserName" style="padding-top: 86px;">User Name: </label>
+        <input type="text" class="form-control alert-warning"
+        data-bind="value: userName" id="txtUserName">
+      </div>
+
+      <div class="form-group" style="text-align: left;">
+        <label for="txtPassword">Password:</label>
+        <input type="text" class="form-control alert-warning"
+         data-bind="value: ePassword" id="textPassword">
+      </div>
+      <button id="get1" style="text-align: center; padding: 6px;
+      border-radius: 6px; margin-bottom: 20px;">Log in</button>
+    </div>
+
+    <div class="col-xs-2 col-md-2" style="background-color: white;">
+
+    </div>
+
+    <div class="col-xs-5 col-md-5" style="text-align: center;">
+      New users create an account here!
+      <div class="form-group" style="text-align: left;">
+        <label for="txtCreateUserN">Create your user name:</label>
+        <input type="text" class="form-control alert-warning"
+        data-bind="value: createUserN" id="txtCreateUserN">
+      </div>
+
+      <div class="form-group" style="text-align: left;">
+        <label for="txtCreatePass">Create your password:</label>
+        <input type="text" class="form-control alert-warning"
+        data-bind="value: createPass" id="txtCreatePass">
+      </div>
+
+      <div class="form-group" style="text-align: left;">
+        <label for="txtEmId">Employee Id:</label>
+        <input type="text" class="form-control alert-warning"
+        data-bind="value: eId1" id="txtEmId">
+      </div>
+
+      <button id="get2" style="text-align: center; padding: 6px;
+      border-radius: 6px; margin-bottom: 20px;">Submit</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<footer>
+  <%include footer%>
+</footer>
+</div>
+  <%include scripts%>
+</body>
+</html>
