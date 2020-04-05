@@ -1,0 +1,9 @@
+{
+ "name": "tdd-example",
+ "author": "Verlee Washington",
+ "private": true,
+ "dependencies": {
+  "chai": "^4.2.0",
+  "mocha": "^7.1.1"
+ }
+}
