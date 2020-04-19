@@ -2,6 +2,7 @@
   "name": "ems",
   "author": "Verlee Washington",
   "private": true,
+  "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -12,6 +13,11 @@
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0"
   },
-  "scripts":{"start":"node app.js"},
-  "engines": {"node":"v12.13.1"}
+  "scripts":{
+    "start":"node app.js",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards."},
+  "engines": {
+    "node":"12.13.x",
+    "npm": "6.x"}
 }
