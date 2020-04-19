@@ -72,28 +72,22 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 app.set('port', process.env.PORT || 8080);
 
-
-app.get("/", function(request, response){
-  response.render("index",{
-    message: "First Employee page"
-  });
-});
-
-app.get("/new", function(request, response){
-  response.render("new",{
-    message: "New Employee Entry Page"
-  });
-});
-
-app.get('/list', function(request, response) {
+/**
+ * Description: Redirects users to the 'index' page.
+ * Type: HttpGet
+ * Request: n/a
+ * Response: index.ejs, Employee[]
+ * URL: localhost:8080
+ */
+app.get('/', function(request, response) {
   Employee.find({}, function(err, employees) {
     if (err) {
       console.log(err);
       throw err;
     } else {
       console.log(employees);
-      response.render('list', {
-        title: 'Employee',
+      res.render('index', {
+        title: 'EMS | Home',
         employees: employees
       })
     }
@@ -113,6 +107,12 @@ app.get('/new', function(request, response) {
   });
 });
 
+app.post("/process", function(request, response){
+  console.log(request.body.txtName);
+  response.redirect("/");
+});
+
+
 /**
  * Description: Processes a form submission.
  * Type: HttpPost
@@ -121,19 +121,11 @@ app.get('/new', function(request, response) {
  * URL: localhost:8080/process
  */
 app.post('/process', function(request, response) {
-   Console.log (request.body.txtName);
-  if (!request.body.txtName) {
-    response.status(400).send('Entries must have a name');
-    return;
+console.log(request.body.txtName);
+ if (!request.body.txtName) {
+   response.status(400).send('Entries must have a name');
+   return;
 }
-
-app.post("/process", function(request, response) {
-
-    console.log(request.body.txtName);
-
-    response.redirect("/");
-
-});
   // Get the requests form data
   const employeeName = request.body.txtName;
   console.log(employeeName);
@@ -143,15 +135,29 @@ app.post("/process", function(request, response) {
     name: employeeName
   });
 
-  // Save data
-  employee.save(function(err){
-    if (err) {
-      console.log(err);
-      throw err;
-    }else{
-      console.log(employeeName + " saved successfully!");
-      response.redirect('/');
+// Save data
+employee.save(function(err){
+  if (err) {
+    console.log(err);
+    throw err;
+  }else{
+    console.log(employeeName + ' saved successfully!');
+    response.redirect('/');
     }
+  });
+});
+
+app.get("/list", function(request, response){
+  Employee.find({}, function(error, employees){
+    if (error) {
+      console.log(error);
+      throw error;
+    }else{
+      response.render("list",{
+      title: "EMS | List",
+      employees:employees
+    })
+   }
   });
 });
 
@@ -163,31 +169,27 @@ app.post("/process", function(request, response) {
  * URL: localhost:8080/view/:queryName
  */
 app.get('/view/:queryName', function(request, response) {
-  const queryName = request.params['queryName'];
-
-Employee.find({'name': queryName}, function(err, employees){
-  if (err) {
-    console.log(err);
-    throw err;
-  }else{
+  var queryName = request.params.queryName;
+// Assignment update
+Employee.find({'name': queryName}, function(error, employees){
+  if(error) throw error;
     console.log(employees);
 
-    if (employees.length > 0){
+    if(employees.length > 0){
       response.render('view', {
-        title: 'EMS | View',
+        title: 'Employee Record',
         employee: employees
       })
+
     }else{
-      response.redirect('/');
+      response.redirect('/list')
     }
-  }
-})
+  });
 });
 
 // Creates a new Node.js server and listens on local port 8080
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Applications started on port 8080!" + app.get('port'));
+  console.log("Application started on port " + app.get('port'))
 });
+
 // End program
-
-

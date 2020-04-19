@@ -2,14 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("header") %>
-
   <body>
     <%- include("navbar") %>
-
     <div role="main" class="container" style="width: 50%;">
       <br /><br />
 
-      <h2>-- Employee Entry Page --</h2>
+      <h3>Employee Entry Page</h3>
       <form method="post" action="/process">
         <div class="form-group">
           <label for="txtName">Name:</label>
@@ -28,7 +26,7 @@
 
       <br /><br />
 
-      <a href="../views/list.ejs">Return to Employees</a>
+      <a href="list">Return to Employees</a>
     </div>
 
     <%- include("scripts") %>

@@ -16,55 +16,12 @@
 <body>
 <%- include("navbar") %>
 
-<div role="main" class="container" style="width: 80%;">
+<div role="main" class="container" style="width: 50%;">
   <br /><br />
 
-   <!--
-     Everything works except this block of code I am not
-    sure what to put in the class section I've tried many things.
-    Also I am not sure if this block goes in index or list, this is
-    very confusing. Your fms files do not have a list in them.
-    I loaded the file in Mongodb but it does not show the data it
-    says its the wrong JSON format. At this point I an not sure
-    I can figure out how to turn code into a csv file.
+<%- include("new") %>
 
-     <% if (employees.length) { %>
-
-      <h2>Employees</h2>
-      <br />
-      <a class="btn" href="../views/new.ejs">Employees</a>
-      <br />
-
-      <table class="table table-striped table-hover">
-        <thead class="thead-dark">
-        <tr>
-          <th class="text-white">Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% employees.forEach(function (entry) { %>
-          <tr>
-            <td><%= entry.name %></td>
-            <td style="width: 10%; text-align: center;">
-              <a style="color: #555" href="../views/new.ejs/<%= entry.name %>">
-                <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-        <% }) %>
-      </table>
-    <% } else { %> No entries! <a href="../views/new.ejs">Add one!</a>
-    <% } %>
-
-    <br />
--->
-
-  <%- include("new") %>
-
-  <%- include("list") %>
 </div>
-
 <%- include("footer") %>
 <%- include("scripts") %>
 </body>

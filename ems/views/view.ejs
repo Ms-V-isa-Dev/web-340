@@ -1,16 +1,13 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <%- include("header") %>
-
   <body>
     <%- include("navbar") %>
-
     <div role="main" class="container" style="width: 50%;">
       <br /><br />
 
-      <h2>Employee Details</h2>
+      <h2>Employee Record</h2>
       <br />
       <div>
         <div class="form-group">
@@ -19,7 +16,6 @@
             type="text"
             class="form-control"
             id="txtName"
-            readonly
             value="<%= employee[0].name %>"
             name="txtName"/>
         </div>
@@ -27,7 +23,7 @@
 
       <br /><br />
 
-      <a href="/">&COPY; V.C.Carrol 2020</a>
+      <a href="/list">Return to Employees</a>
     </div>
 
     <%- include("scripts") %>
